@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Lato", sans-serif;
+}
+
+body
+{
+    background: #2dabff;
+    height: calc(100vh - 60vh);
+}
+h1
+{
+    margin: 10px 0;
+    font-size: 4vw;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+.sun
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30vh;
+
+}
+.image
+{
+    position: relative;
+    height: 60vh;
+    z-index: 1;
+    overflow: hidden;
+}
+.image>svg,
+.sun>svg
+{
+    height: 100%;
+}
+.floor
+{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(117, 117, 117);
+    height: 44vh;
+}
+
+/* .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  } */
+
+
+  @media only screen and (max-width: 600px)
+  {
+    .image
+    {
+        margin-left: -30vw;
+        margin-top: 10vh;
+        height: 46vh;
+    }
+  }
+  
