@@ -12,6 +12,64 @@
 </head>
 <body>
     <h1>Site em contrução!</h1>
+    <a href="tel:+5511993037618">
+        <div class="contact">
+            <h2 class="tel">(11) 9 9303-7618</h2>
+        </div>
+    </a>
+
+    <div class="floating_area">
+        <button class="whatsapp-icon"></button>
+        <div class="whatsapp-chat">
+            <header>
+                <div class="closed"><button></button></div>
+                <div class="content">
+                    <div class="picture">
+                        <img src="/assets/image/SM_Klimatiza_symbol.jpg" alt="sm_klimatiza_logo">
+                    </div>
+
+                    <div class="inf">
+                        <div class="name">SM Klimatiza</div>
+                        <div class="tx">Mande sua mensagem</div>
+                    </div>
+                </div>
+            </header>
+            <div class="main">
+                <div class="chat">
+                    Olá 👋
+                    <br/>
+                    <br/>
+                    Como posso ajudá-lo?
+                </div>
+                <button>Converse no WhatsApp</button>
+            </div>
+        </div>
+        <script>
+            let whatsapp_Btn = document.querySelector('.whatsapp-icon');
+            let whatsapp_Chat = document.querySelector('.whatsapp-chat');
+            let whatsapp_Btn_Close_Chat = document.querySelector('.whatsapp-chat .closed > button');
+            let whatsapp_Btn_Section = document.querySelector('.whatsapp-chat .main > button')
+
+            whatsapp_Btn.addEventListener("click", whatsapp_Open)
+            whatsapp_Btn_Close_Chat.addEventListener("click", whatsapp_Open)
+            whatsapp_Btn_Section.addEventListener("click", whatsapp_Section)
+
+            function whatsapp_Open(){
+                whatsapp_Chat.classList.contains('show')
+                ?   whatsapp_Chat.classList.remove('show')
+                :   whatsapp_Chat.classList.add('show')
+            }
+            function whatsapp_Section(){
+                
+                let phoneNumber = "5511993037618"
+                let message = "Olá! \n\nEstou entrando em contato através do seu site e tenho interesse em obter mais informações."
+                let whatsUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+
+                window.open(whatsUrl, "_blank");
+            }
+        </script>
+    </div>
+
     <div class="sun">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="SVGWI02" version="1.1" viewBox="0 0 100 100">
             <defs>

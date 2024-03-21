@@ -145,4 +145,15 @@ startAnimation();
     h[1].target.setAttribute("stroke-dashoffset", l),
     n()
 }();
-    
+
+window.addEventListener("click", close_Show)
+
+function close_Show(e){
+    let verify_Buttons = e.target.nodeName !== 'BUTTON'
+    let verify_Show = !e.target.offsetParent?.classList.contains('show')
+
+    console.log()
+    if(verify_Buttons && verify_Show){
+        document.querySelector('.show')?.classList.remove('show')
+    }
+}
