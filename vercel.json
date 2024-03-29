@@ -1,10 +1,10 @@
 {
-    "routes": [
-      { "handle": "filesystem" },
-      {
-        "src": "/(.*)",
-        "dest": "/$1.html"
-      }
-    ]
-  }
-  
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/(.*)",
+      "dest": "/$1.html",
+      "headers": { "source": "/" }
+    }
+  ]
+}
