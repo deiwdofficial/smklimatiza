@@ -1,0 +1,253 @@
+@media only screen and (max-width: 1250px){
+    .container
+    {
+        max-width: 1000px;
+    }
+
+    .widget > .content
+    {
+        padding: 0 140px;
+    }
+}
+
+@media only screen and (max-width: 1030px){
+    .container
+    {
+        max-width: none;
+        padding: 0 10px;
+    }
+
+    #services
+    {
+        height: auto;
+    }
+    #services .box
+    {
+        flex-direction: column;
+    }
+    #services .box > .logo
+    {
+        flex: none;
+        width: 60px;
+    }
+    #services .box > .details
+    {
+        text-align: center;
+    }
+
+    footer > .content > .container
+    {
+        row-gap: 12px;
+        flex-direction: column;
+    }
+    footer .more-info
+    {
+        position: relative;
+        column-gap: unset;
+        justify-content: space-evenly;
+    }
+    footer .more-info::after
+    {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 1px;
+        height: 80%;
+        background-color: rgba(var(--services-text), 10%)
+    }
+    footer .more-info > div::after
+    {
+        display: none;
+    }
+    footer .map
+    {
+        width: 100%;
+    }
+
+    footer .copyright > .container
+    {
+        row-gap: 6px;
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 840px){
+    #topbar > .container
+    {
+        justify-content: center;
+    }
+    #topbar .social-area
+    {
+        display: none;
+    }
+
+    #main-menu > .container
+    {
+        padding: 10px;
+    }
+
+    #main-menu .m-mobile
+    {
+        display: block;
+    }
+    #main-menu .menu-link
+    {
+        flex-direction: column;
+    }
+
+    .action-submenu-responsive
+    {
+        display: flex;
+        justify-content: end;
+    }
+    #main-menu .open_m-mobile,
+    #main-menu .close_m-mobile
+    {
+        display: flex;
+    }
+
+    #main-menu > .container > ul.show
+    {
+        width: 100%;
+    }
+    #main-menu > .container > ul
+    {
+        z-index: 98;
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        background-color: rgb(var(--secondary));
+        transition: 
+            width 200ms ease-in-out;
+    }
+    #main-menu .menu-link > li
+    {
+        margin-left: 0;
+        flex-direction: column-reverse;
+    }
+    #main-menu .menu-link > li::before
+    {
+        display: none;
+    }
+    #main-menu .menu-link a
+    {
+        padding: 26px;
+    }
+
+    #main-menu .menu-link > li .submenu
+    {
+        position: unset;
+        width: 100%;
+        height: 0;
+        transition: 
+            top 200ms ease-in-out,
+            opacity 200ms ease-in-out,
+            visibility 200ms ease-in-out
+        ;
+    }
+    #main-menu .menu-link > li:hover .submenu
+    {
+        height:auto;
+    }
+    
+
+    #intro .details
+    {
+        margin: 0 auto;
+        width: auto;
+        text-align: center;
+        --spacing: 40px;
+    }
+    #intro .details > h1
+    {
+        font-size: 6vw;
+    }
+    #intro .details > .btn-request
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #services > .container
+    {
+        flex-direction: column;
+    }
+
+    #services .box:first-child
+    {
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0;
+    }
+    #services .box:last-child
+    {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 4px;
+    }
+
+    .widget > .content
+    {
+        padding: 0;
+    }
+
+    #partners .logo
+    {
+        height: 5vw;
+    }
+}
+
+@media only screen and (max-width: 740px){
+    footer .more-info
+    {
+        font-size: 5vw;
+        row-gap: 16px;
+        flex-direction: column-reverse;
+    }
+
+    footer .widget *> li, 
+    footer .widget *> a
+    {
+        align-items: center !important;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+    footer .widget *> li
+    {
+        margin-bottom: 16px;
+    }
+
+    footer .widget *> h1,
+    footer .widget *> li span
+    {
+        text-align: center;
+    }
+
+    footer .widget *> .icon
+    {
+        margin-right: 0;
+        height: 10vw;
+    }
+
+    footer .more-info::after
+    {
+        display: none;
+    }
+
+    footer .more-info > .social ul
+    {
+        display: flex;
+        flex-direction: row;
+        column-gap: 16px;
+        justify-content: center;
+    }
+    footer .more-info > .social span
+    {
+        display: none;
+    }
+}

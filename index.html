@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>SM Klimatiza - Engenharia de Climatização e Refrigeração</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -59,7 +60,24 @@
                 <img src="assets/image/SM_Klimatiza.svg" alt="SM Klimatiza"/>
             </a>
 
+            <button class="open_m-mobile">
+                <i class="icon">
+                    <svg viewBox="0 0 1000 1000">
+                        <use xlink:href="assets/image/main_icons.svg#MENU"></use>
+                    </svg>
+                </i>
+            </button>
+
             <ul>
+                <div class="action-submenu-responsive b-style">
+                    <button class="close_m-mobile">
+                        <i class="icon">
+                            <svg viewBox="0 0 1000 1000">
+                                <use xlink:href="assets/image/main_icons.svg#CLOSE"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
                 <nav class="menu-link">
                     <li class="hover">
                         <a href="https://smklimatiza.com.br">Início</a>
@@ -356,6 +374,23 @@
                 <button>Converse no WhatsApp</button>
             </div>
         </div>
+
+        <script>
+            const whatsapp_Btn = q('.whatsapp-icon');
+            const whatsapp_Chat = q('.whatsapp-chat');
+            const whatsapp_Btn_Close_Chat = q('.whatsapp-chat .closed > button');
+            const whatsapp_Btn_Section = q('.whatsapp-chat .main > button')
+
+            whatsapp_Btn.addEventListener("click", whatsapp_Open)
+            whatsapp_Btn_Close_Chat.addEventListener("click", whatsapp_Open)
+            whatsapp_Btn_Section.addEventListener("click", whatsapp_Section)
+        
+            function whatsapp_Open(){
+                whatsapp_Chat.classList.contains('show')
+                ?   whatsapp_Chat.classList.remove('show')
+                :   whatsapp_Chat.classList.add('show')
+            }
+        </script>
     </div>
 </body>
 </html>

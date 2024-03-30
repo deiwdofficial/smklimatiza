@@ -1,23 +1,14 @@
 const q = (element)=> document.querySelector(element)
 
+const menuMobileBtn = q('.open_m-mobile');
+const menuMobileCloseBtn = q('.close_m-mobile');
+const areaMenuMobile = q('#main-menu ul');
+
 const intro_Btn_Request = q('.btn-request');
 const UP_Btn = q('button.up');
 
-const whatsapp_Btn = q('.whatsapp-icon');
-const whatsapp_Chat = q('.whatsapp-chat');
-const whatsapp_Btn_Close_Chat = q('.whatsapp-chat .closed > button');
-const whatsapp_Btn_Section = q('.whatsapp-chat .main > button')
+intro_Btn_Request?.addEventListener("click", whatsapp_Section)
 
-whatsapp_Btn.addEventListener("click", whatsapp_Open)
-whatsapp_Btn_Close_Chat.addEventListener("click", whatsapp_Open)
-whatsapp_Btn_Section.addEventListener("click", whatsapp_Section)
-intro_Btn_Request.addEventListener("click", whatsapp_Section)
-
-function whatsapp_Open(){
-    whatsapp_Chat.classList.contains('show')
-    ?   whatsapp_Chat.classList.remove('show')
-    :   whatsapp_Chat.classList.add('show')
-}
 function whatsapp_Section(){
     
     let phoneNumber = "5511993037618"
@@ -25,6 +16,15 @@ function whatsapp_Section(){
     let whatsUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
     window.open(whatsUrl, "_blank");
+}
+
+menuMobileBtn.addEventListener("click", Menu_Mobile)
+menuMobileCloseBtn.addEventListener("click", Menu_Mobile)
+
+function Menu_Mobile(){
+    areaMenuMobile.classList.contains('show')
+        ? areaMenuMobile.classList.remove('show')
+        : areaMenuMobile.classList.add('show')
 }
 
 UP_Btn.addEventListener("click", scroll_Up_Animation)
@@ -36,7 +36,7 @@ function scroll_Up_Animation(){
     });
 }
 
-window.addEventListener("click", close_Show)
+/* window.addEventListener("click", close_Show)
 
 function close_Show(event){
     let verify_Buttons = event.target.nodeName !== 'BUTTON'
@@ -45,4 +45,4 @@ function close_Show(event){
     if(verify_Buttons && verify_Class){
         document.querySelector('.show')?.classList.remove('show')
     }
-}
+} */

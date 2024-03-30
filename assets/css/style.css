@@ -204,7 +204,8 @@ table td
 
 /* ---- T O P B A R ---- */
 
-#topbar
+#topbar,
+.action-submenu-responsive
 {
     display: flex;
     align-items: center;
@@ -301,6 +302,43 @@ table td
 {
     display: block;
     height: 45px;
+}
+
+.action-submenu-responsive
+{
+    display: none;
+    padding: 0 10px;
+}
+
+#main-menu .open_m-mobile,
+#main-menu .close_m-mobile
+{
+    display: none;
+    border: none;
+    width: auto;
+    height: auto;
+    fill: rgb(var(--quaternary));
+    background: transparent;
+}
+
+#main-menu .open_m-mobile
+{
+    padding: 0;
+}
+#main-menu .open_m-mobile > .icon
+{
+    height: 40px;
+}
+
+#main-menu .close_m-mobile
+{
+    padding: 6px;
+    column-gap: 8px;
+    align-items: center;
+}
+#main-menu .close_m-mobile > .icon
+{
+    height: 20px;
 }
 
 #main-menu ul,
@@ -417,7 +455,7 @@ table td
     display: flex;
 
     background-size: cover;
-    background-position: center;
+    background-position: 0 38%;
     background-image: linear-gradient(270deg, rgb(var(--quinary)), rgb(var(--quaternary)));
 }
 #intro::before
@@ -436,29 +474,27 @@ table td
 #intro .details
 {
     width: 600px;
-    
+    --spacing: 100px;
 }
 #intro .details > h1
 {
     margin-bottom: 16px;
     font-size: 3em;
     font-weight: 700;
-    margin-top: 5vw;
-}
-#intro .details > .btn-request
-{
-    margin-bottom: 10vw;
+    margin-top: var(--spacing);
 }
 
 #intro .details >:only-child
 {
-    margin: 5vw 0;
+    margin: var(--spacing) 0;
     color: rgb(var(--services-text));
 }
 
-#intro .btn-request
+#intro .details > .btn-request
 {
     display: flex;
+    align-items: center;
+    margin-bottom: calc(180px/2 + var(--spacing));
 }
 #intro .btn-request > .icon
 {
@@ -476,7 +512,7 @@ table td
 
 #services
 {
-    z-index: 99;
+    z-index: 10;
     position: relative;
     
     margin-top: calc(-180px/2);
@@ -595,7 +631,7 @@ table td
 {
     content: '';
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 50%;
     transform: translateX(-50%);
     border-top: 24px solid rgb(var(--secondary));
@@ -744,7 +780,8 @@ footer > .content > .container
     z-index: 1;
     display: flex;
     position: relative;
-    padding: 32px 0;
+    padding-top: 32px;
+    padding-bottom: 32px;
     justify-content: space-between;
 }
 footer .more-info
