@@ -17,6 +17,8 @@
         padding: 0 10px;
     }
 
+    /* ---- S E R V I C E S ---- */
+
     #services
     {
         height: auto;
@@ -34,6 +36,8 @@
     {
         text-align: center;
     }
+
+    /* ---- F O O T E R ---- */
 
     footer > .content > .container
     {
@@ -75,6 +79,9 @@
 }
 
 @media only screen and (max-width: 840px){
+
+    /* ---- T O P B A R ---- */
+
     #topbar > .container
     {
         justify-content: center;
@@ -83,6 +90,8 @@
     {
         display: none;
     }
+
+    /* ---- M A I N - M E N U ---- */
 
     #main-menu > .container
     {
@@ -156,6 +165,7 @@
         height:auto;
     }
     
+    /* ---- I N T R O ---- */
 
     #intro .details
     {
@@ -173,6 +183,8 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    /* ---- S E R V I C E S ---- */
 
     #services > .container
     {
@@ -195,6 +207,8 @@
         padding: 0;
     }
 
+    /* ---- P A R T N E R S ---- */
+
     #partners .logo
     {
         height: 5vw;
@@ -202,6 +216,9 @@
 }
 
 @media only screen and (max-width: 740px){
+
+    /* ---- F O O T E R ---- */
+
     footer .more-info
     {
         font-size: 5vw;
