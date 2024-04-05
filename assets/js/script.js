@@ -17,7 +17,6 @@ const disableFormBtn = document.querySelector('.disable-form')
 const intro_Btn_Request = q('.btn-request');
 const UP_Btn = q('button.up');
 
-
 menuMobileBtn.addEventListener("click", Menu_Mobile)
 menuMobileCloseBtn.addEventListener("click", Menu_Mobile)
 
@@ -38,10 +37,16 @@ const FORM_Valitador = {
     form: q('#form-contact form'),
     openClose:function(){
         if(windowArea.classList.contains('show')){
+
             windowArea.classList.remove('show')
+            q('#form-contact').classList.remove('show')
+
             document.body.style.overflow = '';
         } else {
+
             windowArea.classList.add('show')
+            q('#form-contact').classList.add('show')
+
             document.body.style.overflow = 'hidden';
         }
         
@@ -90,12 +95,15 @@ const FORM_Valitador = {
                     break;
                     case 'min':
                         if(this.rules.min(this.getInputs()[index], ruleValue)){
-                            return `Minimo de ${ruleValue} caracteres`
+                            return `Mínimo de ${ruleValue} caracteres`
+                        } else if(this.getInputs()[index].name == 'phone'){
+                            return `Mínimo de 11 dígitos`
                         }
+                        
                     break;
                     case 'regex':
                         if(this.rules.regex(this.getInputs()[index], ruleValue)){
-                            return 'Formato E-mail válido: exemplo@email.com'
+                            return 'Formato e-mail válido: exemplo@email.com'
                         }
                     break;
                 }
@@ -276,15 +284,24 @@ new Array(WHATSAPP.button_Conversation, intro_Btn_Request).forEach((e)=>{
     e?.addEventListener("click", WHATSAPP.action)
 })
 
-FORM_Valitador.initializeState()
 
-/* window.addEventListener("click", close_Show)
+window.addEventListener("click", close_Show)
 
 function close_Show(event){
     let verify_Buttons = event.target.nodeName !== 'BUTTON'
-    let verify_Class = !event.target.offsetParent?.classList.contains('show')
+    let verify_Class = event.target.offsetParent?.closest('.show')
+
+    if(verify_Class == undefined || null){
+        verify_Class = true
+    } else {
+        verify_Class = false
+    }
 
     if(verify_Buttons && verify_Class){
+        FORM_Valitador.clear()
         document.querySelector('.show')?.classList.remove('show')
     }
-} */
+}
+
+
+FORM_Valitador.initializeState()

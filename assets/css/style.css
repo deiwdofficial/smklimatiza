@@ -912,7 +912,7 @@ footer .copyright *> a:hover
     ;
 }
 
-.window.show #form-contact
+#form-contact.show
 {
     transform: scale(1);
 }
