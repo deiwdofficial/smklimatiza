@@ -21,7 +21,16 @@ menuMobileBtn.addEventListener("click", Menu_Mobile)
 menuMobileCloseBtn.addEventListener("click", Menu_Mobile)
 
 function Menu_Mobile(){
-    areaMenuMobile.classList.toggle('show')
+
+    if(areaMenuMobile.classList.contains('show')){
+
+        areaMenuMobile.classList.remove('show')
+        document.body.style.overflow = '';
+    } else {
+
+        areaMenuMobile.classList.add('show')
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 UP_Btn.addEventListener("click", scroll_Up_Animation)
@@ -96,8 +105,6 @@ const FORM_Valitador = {
                     case 'min':
                         if(this.rules.min(this.getInputs()[index], ruleValue)){
                             return `Mínimo de ${ruleValue} caracteres`
-                        } else if(this.getInputs()[index].name == 'phone'){
-                            return `Mínimo de 11 dígitos`
                         }
                         
                     break;
