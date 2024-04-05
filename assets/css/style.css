@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 *{
     margin: 0;
     padding: 0;
@@ -29,7 +31,7 @@
 
 body
 {
-    height: 100vh;
+    /* height: 100vh; */
 
     font-weight: 400; /* light: 300 | regular: 400 | medium: 500 | semiBold: 600 | bold: 700 | extraBold: 800*/
     font-style: normal;
@@ -928,8 +930,8 @@ footer .copyright *> a:hover
     border-radius: 4px;
     overflow: hidden;
 
-    transform: scale(.6);
-    transition: transform 1200ms ease-in-out;
+    transform: scale(.8);
+    transition: transform 600ms ease-in-out;
     background-color: rgba(var(--secondary));
     border: 1px solid rgba(var(--tertiary), 22%);
 }
@@ -1252,6 +1254,7 @@ footer .copyright *> a:hover
     border-radius: 12px;
     overflow: hidden;
 
+    box-shadow: 0 5px 5px 0 rgba(000, 000, 000, 18%);
     background-position: 80%;
     background-color: rgb(238, 232, 225);
     background-image: url('../image/bg-chat-whatsapp.png');

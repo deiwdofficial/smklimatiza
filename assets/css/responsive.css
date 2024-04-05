@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @media only screen and (max-width: 1250px){
     .container
     {
@@ -176,7 +178,7 @@
     }
     #intro .details > h1
     {
-        font-size: 6vw;
+        font-size: 3.4em;
     }
     #intro .details > .btn-request
     {
@@ -221,9 +223,9 @@
 
     footer .more-info
     {
-        font-size: 5vw;
+        font-size: 1.2em;
         row-gap: 16px;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     footer .widget *> li, 
@@ -266,5 +268,96 @@
     footer .more-info > .social span
     {
         display: none;
+    }
+
+
+    /* ---- F O R M - C O N T A C T ---- */
+
+    .window
+    {
+        padding: 10px;
+    }
+    #form-contact
+    {
+        width: 100%;
+        margin-top: 0;
+        overflow-y: auto;
+        flex-direction: column-reverse;
+    }
+    #form-contact > .content > form
+    {
+        width: auto;
+    }
+    #form-contact > .image
+    {
+        width: auto;
+        background: rgb(var(--quaternary));
+    }
+    #form-contact > .image::after
+    {
+        background-image: linear-gradient(90deg, rgb(var(--primary)), transparent);
+    }
+}
+
+
+@media only screen and (max-width: 460px){
+    body
+    {
+        font-size: 5vw;
+    }
+
+
+    /* ---- T O P B A R ---- */
+
+    #topbar
+    {
+        font-size: .8em;
+    }
+
+
+    /* ---- M A I N - M E N U ---- */
+
+    #main-menu .logo,
+    #main-menu .open_m-mobile > .icon
+    {
+        height: 12vw;
+    }
+
+
+    /* ---- I N T R O ---- */
+
+    #intro .details > h1
+    {
+        font-size: 1.4em;
+    }
+
+
+    /* ---- C O M M I T M E N T ---- */
+
+    table *> tr
+    {
+        flex-direction: column;
+    }
+
+
+    /* ---- W H A T S A P P - A R E A ---- */
+
+    .whatsapp-chat
+    {
+        width: calc(100vw - 20px);
+    }
+    .whatsapp-chat > header .picture
+    {
+        width: 14vw;
+        height: 14vw;
+    }
+    .whatsapp-chat > .main > button
+    {
+        padding: 3vw 4vw;
+    }
+    .whatsapp-chat > .main > button::before
+    {
+        width: 9vw;
+        height: 9vw;
     }
 }
