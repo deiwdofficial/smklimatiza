@@ -299,6 +299,7 @@ function close_Show(event){
 
     if(verify_Buttons && verify_Class){
         FORM_Valitador.clear()
+        document.body.style.overflow = '';
         document.querySelector('.show')?.classList.remove('show')
     }
 }
