@@ -305,3 +305,8 @@ function close_Show(event){
 
 
 FORM_Valitador.initializeState()
+
+console.log('%cDesenvolvido por Deiwd', 'color: white; font-size: 34px; padding: 8px; font-weight: bold; text-transform: uppercase;');
+console.log('%cGitHub', 'background-color: white; color: black; font-size: 14px; padding: 4px 8px; font-weight: bold; cursor: pointer;', 'https://github.com/deiwdofficial');
+console.log('%cLinkedIn', 'background-color: white; color: black; font-size: 14px; padding: 4px 8px; font-weight: bold; cursor: pointer;', 'https://www.linkedin.com/in/deiwdofficial');
+console.log('%cInstagram', 'background-color: white; color: black; font-size: 14px; padding: 4px 8px; font-weight: bold; cursor: pointer;', 'https://www.instagram.com/deiwdofficial');
