@@ -45,18 +45,20 @@ function scroll_Up_Animation(){
 const FORM_Valitador = {
     form: q('#form-contact form'),
     openClose:function(){
-        if(windowArea.classList.contains('show')){
+        if(windowArea !== null){
+            if(windowArea.classList?.contains('show')){
 
-            windowArea.classList.remove('show')
-            q('#form-contact').classList.remove('show')
-
-            document.body.style.overflow = '';
-        } else {
-
-            windowArea.classList.add('show')
-            q('#form-contact').classList.add('show')
-
-            document.body.style.overflow = 'hidden';
+                windowArea.classList.remove('show')
+                q('#form-contact').classList.remove('show')
+    
+                document.body.style.overflow = '';
+            } else {
+    
+                windowArea.classList.add('show')
+                q('#form-contact').classList.add('show')
+    
+                document.body.style.overflow = 'hidden';
+            }
         }
         
         FORM_Valitador.clear()
@@ -228,6 +230,7 @@ const FORM_Valitador = {
         }
     },
     toggleDisable:function(){
+
         let check = disableFormBtn.querySelector('input').checked
 
         if(check == true){
@@ -259,37 +262,13 @@ const FORM_Valitador = {
     }
 }
 
-disableFormBtn.addEventListener("click", FORM_Valitador.toggleDisable)
+if(disableFormBtn !== null){
+    disableFormBtn.addEventListener("click", FORM_Valitador.toggleDisable)
+}
+
 formCloseBtn.addEventListener("click", FORM_Valitador.openClose)
 FORM_Valitador.form.addEventListener('submit', FORM_Valitador.submit)
 FORM_Valitador.form.querySelector('input[name=phone]').addEventListener('input', FORM_Valitador.rules.phoneFormat)
-
-
-const WHATSAPP = {
-    chat: q('.whatsapp-chat'),
-    button_openChat: q('.whatsapp-icon'),
-    button_CloseChat: q('.whatsapp-chat .closed > button'),
-    button_Conversation: q('.whatsapp-chat .main > button'),
-    open: function(){
-        this.chat.classList.toggle('show')
-    },
-    action: function(){
-    
-        let phoneNumber = "5511993037618"
-        let message = "Olá! \n\nEstou entrando em contato através do seu site e tenho interesse em obter mais informações."
-        let whatsUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    
-        window.open(whatsUrl, "_blank");
-    }
-}
-
-new Array(WHATSAPP.button_openChat, WHATSAPP.button_CloseChat).forEach((e)=>{
-    e.addEventListener("click", WHATSAPP.open.bind(WHATSAPP))
-}) 
-
-new Array(WHATSAPP.button_Conversation, intro_Btn_Request).forEach((e)=>{
-    e?.addEventListener("click", WHATSAPP.action)
-})
 
 
 window.addEventListener("click", close_Show)
@@ -305,9 +284,15 @@ function close_Show(event){
     }
 
     if(verify_Buttons && verify_Class){
-        FORM_Valitador.clear()
-        document.body.style.overflow = '';
-        document.querySelector('.show')?.classList.remove('show')
+
+        if(windowArea !== null){
+            FORM_Valitador.clear()
+
+            document.body.style.overflow = '';
+            document.querySelector('.show')?.classList.remove('show')
+        }
+        
+        
     }
 }
 
