@@ -209,6 +209,13 @@
         padding: 0;
     }
 
+    /* ---- C O N T A T O - P A G E ---- */
+
+    #contact-page #form-contact > .image
+    {
+        display: none;
+    }
+
     /* ---- P A R T N E R S ---- */
 
     #partners .logo
@@ -218,6 +225,13 @@
 }
 
 @media only screen and (max-width: 740px){
+
+    /* ---- C O N T A T O - P A G E ---- */
+
+    #contact-page > .container > .content
+    {
+        padding: 0;
+    }
 
     /* ---- F O O T E R ---- */
 
@@ -331,6 +345,18 @@
         font-size: 1.4em;
     }
 
+
+    /* ---- C O N T A C T - P A G E ---- */
+
+    #contact-page #form-contact > .content > h2
+    {
+        font-size: 1.8em;
+    }
+    #contact-page  #form-contact fieldset > .icon
+    {
+        display: none;
+    }
+    
 
     /* ---- C O M M I T M E N T ---- */
 

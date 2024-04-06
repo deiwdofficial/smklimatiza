@@ -608,7 +608,8 @@ table td
 #commitment,
 #about-us,
 #partners,
-#privacy_terms
+#privacy_terms,
+#contact-page
 {
    padding: 34px 0; 
 }
@@ -734,6 +735,39 @@ table td
 #privacy_terms a:hover
 {
     text-decoration: underline;
+}
+
+
+/* ---- C O N T A T O - P A G E ---- */
+
+#contact-page > .container > .content 
+{
+    padding: 0 140px;
+}
+#contact-page .content > #form-contact
+{
+    margin-top: 0;
+    transform: scale(1) !important;
+}
+
+#contact-page #form-contact > .content
+{
+    flex: 2;
+}
+#contact-page #form-contact > .image
+{
+    flex: 1;
+}
+
+#contact-page #form-contact > .content > form,
+#contact-page #form-contact > .image
+{
+    width: auto;
+}
+
+#contact-page #form-contact > .image > button
+{
+    display: none;
 }
 
 
