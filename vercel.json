@@ -10,12 +10,6 @@
       "src": "/servicos",
       "status": 301,
       "headers": { "Location": "/" }
-    },
-    {
-      "handle": "miss",
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/404"
     }
   ]
 }
