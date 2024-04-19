@@ -637,7 +637,8 @@ table td
 #partners,
 #privacy_terms,
 #contact-page,
-#services-page
+#services-page,
+#error-page
 {
    padding: 34px 0; 
 }
@@ -995,6 +996,44 @@ table td
 #services-page .card_widget > .more .description
 {
     padding: 0 20px;
+}
+
+
+/* ---- E R R O R - P A G E ---- */
+
+#error-page
+{
+    text-align: center;
+    min-height: 
+        calc(100vh - 40px - 84px - 356.39px)
+        /* height:(topbar - menu - footer))*/
+    ; 
+}
+#error-page .content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+#error-page .content > h1
+{
+    
+    font-weight: 800;
+    font-size: 7em;
+    background-image: linear-gradient(90deg, rgb(var(--tertiary)), rgb(var(--quaternary)));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#error-page .content > h2
+{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+#error-page .content > p
+{
+    width: 100%;
+    max-width: 400px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 
