@@ -6,16 +6,45 @@
 
 const q = (element)=> document.querySelector(element)
 
+const intro_Btn_Request = q('.btn-request');
+
+
+//  -------------------
+//  M E N U - L I N K |
+//  -------------------
+
+window.addEventListener('load', handleHashChange)
+window.addEventListener('hashchange', handleHashChange)
+
+function handleHashChange(){
+    setTimeout(()=>{
+        if(window.location.hash.includes("#")) {
+            menu_idAnchor(window.location.hash);
+        }
+    }, 20)
+}
+
+function menu_idAnchor(id) {
+    let element = document.querySelector(id);
+
+    if (element) {
+        let scrollPosition_El = element.offsetTop;
+
+        window.scrollTo({
+            top: scrollPosition_El - 90,
+            behavior: 'smooth'
+        });
+    }
+}
+
+
+//  -----------------------
+//  M E N U - M O B I L E |
+//  -----------------------
+
+const areaMenuMobile = q('#main-menu ul');
 const menuMobileBtn = q('.open_m-mobile');
 const menuMobileCloseBtn = q('.close_m-mobile');
-const areaMenuMobile = q('#main-menu ul');
-
-const windowArea = q('.window');
-const formCloseBtn = q('.close-form');
-const disableFormBtn = document.querySelector('.disable-form')
-
-const intro_Btn_Request = q('.btn-request');
-const UP_Btn = q('button.up');
 
 menuMobileBtn.addEventListener("click", Menu_Mobile)
 menuMobileCloseBtn.addEventListener("click", Menu_Mobile)
@@ -33,6 +62,13 @@ function Menu_Mobile(){
     }
 }
 
+
+//  -------------------
+//  S C R O L L - U P |
+//  -------------------
+
+const UP_Btn = q('button.up');
+
 UP_Btn.addEventListener("click", scroll_Up_Animation)
 
 function scroll_Up_Animation(){
@@ -41,6 +77,15 @@ function scroll_Up_Animation(){
         behavior: 'smooth'
     });
 }
+
+
+//  -------------------------
+//  F O R M - C O N T A C T |
+//  -------------------------
+
+const windowArea = q('.window');
+const formCloseBtn = q('.close-form');
+const disableFormBtn = document.querySelector('.disable-form')
 
 const FORM_Valitador = {
     form: q('#form-contact form'),
@@ -264,16 +309,24 @@ const FORM_Valitador = {
 
 if(disableFormBtn !== null){
     disableFormBtn.addEventListener("click", FORM_Valitador.toggleDisable)
+    formCloseBtn.addEventListener("click", FORM_Valitador.openClose)
 }
 
-formCloseBtn.addEventListener("click", FORM_Valitador.openClose)
-FORM_Valitador.form.addEventListener('submit', FORM_Valitador.submit)
-FORM_Valitador.form.querySelector('input[name=phone]').addEventListener('input', FORM_Valitador.rules.phoneFormat)
+if(q('#form-contact') !== null){
+    FORM_Valitador.form.addEventListener('submit', FORM_Valitador.submit)
+    FORM_Valitador.form.querySelector('input[name=phone]').addEventListener('input', FORM_Valitador.rules.phoneFormat)
+
+    FORM_Valitador.initializeState()
+}
 
 
-window.addEventListener("click", close_Show)
+//  -----------------------
+//  C L O S E - M O D A L |
+//  -----------------------
 
-function close_Show(event){
+window.addEventListener("click", close_Modal)
+
+function close_Modal(event){
     let verify_Buttons = event.target.nodeName !== 'BUTTON'
     let verify_Class = event.target.offsetParent?.closest('.show')
 
@@ -287,19 +340,42 @@ function close_Show(event){
 
         if(windowArea !== null){
             FORM_Valitador.clear()
-
             document.body.style.overflow = '';
-            document.querySelector('.show')?.classList.remove('show')
+            
         }
         
-        
+        document.querySelectorAll('.show').forEach((el)=>{
+            el.classList.remove('show')
+        })
     }
 }
 
 
-FORM_Valitador.initializeState()
+//  ---------------------------
+//  S E R V I C E S - P A G E |
+//  ---------------------------
 
-console.log('%cDesenvolvido por Deiwd', 'color: white; font-size: 34px; padding: 8px; font-weight: bold; text-transform: uppercase;');
+const cardWidget = document.querySelectorAll('.card_widget')
+
+if(cardWidget !== null){
+
+    cardWidget.forEach((card)=>{
+        card.addEventListener("click", ()=>{
+
+            let verifyShow = card.classList.contains('show')
+
+            cardWidget.forEach((cW)=> cW.classList.remove('show'))
+            
+            if(!verifyShow){
+                card.classList.add('show')
+            }
+            
+        })
+    })
+}
+
+
+console.log('%cDeveloper wd.', 'color: white; font-size: 34px; padding: 8px; font-weight: bold; text-transform: uppercase;');
 console.log('%cGitHub', 'background-color: white; color: black; font-size: 14px; padding: 4px 8px; font-weight: bold; cursor: pointer;', 'https://github.com/deiwdofficial');
 console.log('%cLinkedIn', 'background-color: white; color: black; font-size: 14px; padding: 4px 8px; font-weight: bold; cursor: pointer;', 'https://www.linkedin.com/in/deiwdofficial');
 console.log('%cInstagram', 'background-color: white; color: black; font-size: 14px; padding: 4px 8px; font-weight: bold; cursor: pointer;', 'https://www.instagram.com/deiwdofficial');

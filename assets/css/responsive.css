@@ -130,12 +130,13 @@
         top: 0;
         right: 0;
         width: 0%;
-        height: 100%;
+        height: 100vh;
         overflow: hidden;
         position: absolute;
         background-color: rgb(var(--secondary));
-        transition: 
-            width 200ms ease-in-out;
+        transition:
+            width 200ms ease-in-out
+        ;
     }
     #main-menu .menu-link > li
     {
@@ -209,9 +210,10 @@
         padding: 0;
     }
 
-    /* ---- C O N T A T O - P A G E ---- */
+    /* ---- C O N T A C T - P A G E ---- */
+    
 
-    #contact-page #form-contact > .image
+    #contact-page .area-contact
     {
         display: none;
     }
@@ -365,6 +367,54 @@
         flex-direction: column;
     }
 
+
+    /* ---- S E R V I C E S - P A G E ---- */
+
+    #services-page .card_widget
+    {
+        height: unset;
+    }
+
+    #services-page .card_widget > h2.title
+    {
+        padding: 14px 0;
+        font-size: 1.4em;
+    }
+    #services-page .card_widget > .more
+    {
+        --h-card-btn: 50px;
+        font-size: .8em;
+        line-height: 1.4em;
+    }
+
+    #services-page .card_widget > .more .arrow-icon
+    {
+        padding: 14px 0;
+    }
+    #services-page .card_widget > .more .description
+    {
+        display: none;
+        padding: 10px 20px;
+    }
+
+    #services-page .card_widget.show > .more .description
+    {
+        display: block;
+    }
+    
+
+    /* ---- F O R M - C O N T A C T ---- */
+
+    #form-contact fieldset > .icon
+    {
+        display: none;
+    }
+
+    #form-contact .input-area > label
+    {
+        top: calc(38px - 1em * 2);
+        font-size: .8em;
+    }
 
     /* ---- W H A T S A P P - A R E A ---- */
 

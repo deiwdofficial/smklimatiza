@@ -5,7 +5,23 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://smklimatiza.com.br/politica_de_privacidade</loc>
-        <priority>0.5</priority>
+        <loc>https://smklimatiza.com.br/politica-de-privacidade/</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://smklimatiza.com.br/contato/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smklimatiza.com.br/servicos/manutencao-preventiva/</loc>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://smklimatiza.com.br/servicos/servicos-de-reparo/</loc>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://smklimatiza.com.br/servicos/projetos-de-climatizacao/</loc>
+        <priority>0.4</priority>
     </url>
 </urlset>
