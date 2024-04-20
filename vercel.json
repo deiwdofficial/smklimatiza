@@ -5,11 +5,6 @@
       "src": "/(.*)",
       "dest": "/$1.html",
       "headers": { "source": "/" }
-    },
-    {
-      "src": "/servicos",
-      "status": 301,
-      "headers": { "Location": "/" }
     }
   ]
 }

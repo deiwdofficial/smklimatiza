@@ -405,15 +405,55 @@
 
     /* ---- F O R M - C O N T A C T ---- */
 
+    #form-contact fieldset.show
+    {
+        margin-bottom: 2em;
+    }
+
     #form-contact fieldset > .icon
     {
         display: none;
     }
 
-    #form-contact .input-area > label
+    #form-contact fieldset.show .error
     {
-        top: calc(38px - 1em * 2);
-        font-size: .8em;
+        position: absolute;
+        top: 100%;
+    }
+    #form-contact fieldset.show .error::before
+    {
+        width: 1em;
+        height: 1em;
+    }
+
+    #form-contact .input-area > input
+    {
+        height: 3em;
+    }
+
+    #form-contact .input-area > label,
+    #form-contact .input-area > input:focus ~ label,
+    #form-contact .input-area > input:not(:placeholder-shown) ~ label,
+    #form-contact .input-area > textarea:focus ~ label, 
+    #form-contact .input-area > textarea:not(:placeholder-shown) ~ label
+    {
+        top: 50%;
+        height: auto;
+        transform: translateY(-50%);
+        font-size: .9em;
+    }
+
+    #form-contact .input-area > textarea ~ label
+    {
+        top: 20px;
+    }
+
+    #form-contact .input-area > input:not(:placeholder-shown) ~ label,
+    #form-contact .input-area > input:focus ~ label,
+    #form-contact .input-area > textarea:focus ~ label, 
+    #form-contact .input-area > textarea:not(:placeholder-shown) ~ label
+    {
+        display: none;
     }
 
     /* ---- W H A T S A P P - A R E A ---- */

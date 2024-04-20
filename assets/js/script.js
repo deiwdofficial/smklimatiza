@@ -219,10 +219,10 @@ const FORM_Valitador = {
 
         if(msg[index] !== true){
             errorArea.classList.add('show')
-            errorArea.querySelector('.input-area').setAttribute('attr', msg[index])
+            errorArea.querySelector('.error').innerHTML = msg[index]
         } else {
             errorArea.classList.remove('show')
-            errorArea.querySelector('.input-area').setAttribute('attr', '')
+            errorArea.querySelector('.error').innerHTML = ''
         }
     },
     submit:function(e){
