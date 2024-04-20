@@ -226,8 +226,11 @@ const FORM_Valitador = {
         }
     },
     submit:function(e){
+
         let send = false;
-    
+
+        e?.preventDefault()
+
         for(let i = 0; i < FORM_Valitador.getInputs().length; i++){
 
             let check = FORM_Valitador.verifyRules()
@@ -248,8 +251,10 @@ const FORM_Valitador = {
             }
         }
 
-        if(!send){
-            e?.preventDefault()
+        if(send){
+            e.target.closest("#form-contact").classList.add('submit')
+            e.target.querySelector("input[name=redirectTo]").value = `https://${window.location.host}`
+            setTimeout(()=> e.target.submit(), 1500)
         }
         
     },
