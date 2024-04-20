@@ -11,9 +11,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4CwAsnK5Gdp7qLdH4k6uQ_6fo0BlbM28&callback=console.debug&libraries=maps,marker&v=beta"></script> -->
+    <script>
+        function initMap(){
+
+        let center = { lat: -23.59819221496582, lng: -46.56325149536133 };
+
+        let mapOptions = {
+            zoom: 15,
+            center: center
+        };
+
+        let map = new google.maps.Map(document.querySelector('.map'), mapOptions);
+
+        let marker = new google.maps.Marker({
+            position: center,
+            map: map,
+            title: 'Minha Localização'
+        });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4CwAsnK5Gdp7qLdH4k6uQ_6fo0BlbM28&loading=async&callback=initMap&v=weekly" defer></script>
     <script src="../../assets/js/script.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4CwAsnK5Gdp7qLdH4k6uQ_6fo0BlbM28&loading=async&callback=initMap&v=weekly" async defer></script>
 </head>
 <body>
     <div id="topbar" class="b-style">

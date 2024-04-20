@@ -9,29 +9,6 @@ const q = (element)=> document.querySelector(element)
 const intro_Btn_Request = q('.btn-request');
 
 
-//  --------------------------------
-//  A S Y N C - G O O G L E - M A P |
-//  --------------------------------
-
-function initMap(){
-
-    let center = { lat: -23.59819221496582, lng: -46.56325149536133 };
-    
-    let mapOptions = {
-        zoom: 15,
-        center: center
-    };
-    
-    let map = new google.maps.Map(document.querySelector('.map'), mapOptions);
-    
-    let marker = new google.maps.Marker({
-        position: center,
-        map: map,
-        title: 'Minha Localização'
-    });
-}
-
-
 //  -------------------
 //  M E N U - L I N K |
 //  -------------------
